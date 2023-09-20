@@ -25,5 +25,10 @@ class MyTheme {
           unselectedIconTheme: IconThemeData(
             size: 35,
           ),
-          selectedIconTheme: IconThemeData(size: 35)));
+          selectedIconTheme: IconThemeData(size: 35)),
+      cardTheme: CardTheme(
+          color: whiteColor,
+          elevation: 3,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))));
 }

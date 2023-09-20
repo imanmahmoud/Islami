@@ -41,20 +41,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 items: [
                   BottomNavigationBarItem(
                       icon:
-                          ImageIcon(AssetImage('assets/images/radio_icon.png')),
-                      label: 'Radio'),
-                  BottomNavigationBarItem(
-                      icon:
-                          ImageIcon(AssetImage('assets/images/sebha_icon.png')),
-                      label: 'Sebha'),
+                          ImageIcon(AssetImage('assets/images/quran_icon.png')),
+                      label: 'Quran'),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
                           AssetImage('assets/images/hadith_icon.png')),
                       label: 'Hadith'),
                   BottomNavigationBarItem(
                       icon:
-                          ImageIcon(AssetImage('assets/images/quran_icon.png')),
-                      label: 'Quran')
+                          ImageIcon(AssetImage('assets/images/sebha_icon.png')),
+                      label: 'Sebha'),
+                  BottomNavigationBarItem(
+                      icon:
+                          ImageIcon(AssetImage('assets/images/radio_icon.png')),
+                      label: 'Radio'),
                 ]),
           ),
           body: tabs[selectedIndex],
@@ -63,5 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  List<Widget> tabs = [RadioTab(), SebhaTab(), HadithTab(), QuranTab()];
+  List<Widget> tabs = [
+    QuranTab(),
+    HadithTab(),
+    SebhaTab(),
+    RadioTab(),
+  ];
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/home/quran/sura_details_item.dart';
-import 'package:islami/my_theme.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const routeName = 'sura details';
@@ -11,12 +10,12 @@ class SuraDetailsScreen extends StatefulWidget {
 }
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
-  List<String> lines = [];
+  List<String> verses = [];
 
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
-    if (lines.isEmpty) {
+    if (verses.isEmpty) {
       loadFile(args.index);
     }
 
@@ -32,24 +31,21 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             title: Text(
           args.name,
         )),
-        body: lines.length == 0
+        body: verses.length == 0
             ? Center(
                 child: CircularProgressIndicator(
                 color: Theme.of(context).primaryColor,
               ))
-            : Container(
+            : Card(
                 margin: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.05,
                     vertical: MediaQuery.of(context).size.height * 0.06),
-                decoration: BoxDecoration(
-                    color: MyTheme.whiteColor,
-                    borderRadius: BorderRadius.circular(24)),
                 child: ListView.builder(
                     itemBuilder: (context, index) {
                       return SuraDetailsItem(
-                          content: lines[index], index: index);
+                          content: verses[index], index: index);
                     },
-                    itemCount: lines.length),
+                    itemCount: verses.length),
               ),
       ),
     ]);
@@ -59,7 +55,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     String fileContent =
         await rootBundle.loadString('assets/files/${index + 1}.txt');
     /*List<String>*/
-    lines = fileContent.split('\n');
+    verses = fileContent.trim().split('\n');
     /*verses=lines;*/
     setState(() {});
   }
