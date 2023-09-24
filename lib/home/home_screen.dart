@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/home/hadith/hadith_tab.dart';
 import 'package:islami/home/quran/quran_tab.dart';
 import 'package:islami/home/radio/radio_tab.dart';
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           appBar: AppBar(
               title: Text(
-            'islami',
+                AppLocalizations.of(context)!.app_title,
           )),
           bottomNavigationBar: Theme(
             data: Theme.of(context)
@@ -43,21 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   BottomNavigationBarItem(
                       icon:
                           ImageIcon(AssetImage('assets/images/quran_icon.png')),
-                      label: 'Quran'),
+                      label: AppLocalizations.of(context)!.quran),
                   BottomNavigationBarItem(
                       icon: ImageIcon(
                           AssetImage('assets/images/hadith_icon.png')),
-                      label: 'Hadith'),
+                      label: AppLocalizations.of(context)!.hadith),
                   BottomNavigationBarItem(
                       icon:
                           ImageIcon(AssetImage('assets/images/sebha_icon.png')),
-                      label: 'Sebha'),
+                      label: AppLocalizations.of(context)!.sebha),
                   BottomNavigationBarItem(
                       icon:
                           ImageIcon(AssetImage('assets/images/radio_icon.png')),
-                      label: 'Radio'),
+                      label: AppLocalizations.of(context)!.radio),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.settings), label: 'settings')
+                      icon: Icon(Icons.settings),
+                      label: AppLocalizations.of(context)!.settings)
                 ]),
           ),
           body: tabs[selectedIndex],
