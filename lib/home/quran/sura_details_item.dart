@@ -11,7 +11,7 @@ class SuraDetailsItem extends StatelessWidget {
     return Text(
       '$content {${index + 1}}',
       textDirection: TextDirection.rtl,
-      style: Theme.of(context).textTheme.titleSmall,
+      style: Theme.of(context).textTheme.bodySmall,
       textAlign: TextAlign.center,
     );
   }
