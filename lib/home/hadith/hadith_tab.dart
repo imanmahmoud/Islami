@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/home/hadith/hadith_name_item.dart';
 
 import 'hadith.dart';
@@ -25,7 +26,7 @@ class _HadithTabState extends State<HadithTab> {
           thickness: 3,
         ),
         Text(
-          'Al-ahadith',
+          AppLocalizations.of(context)!.hadith_number,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguageBootomSheet extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class LanguageBootomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('English',
+              Text(AppLocalizations.of(context)!.english,
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       color:
                           Theme.of(context).textSelectionTheme.selectionColor)),
@@ -25,7 +26,8 @@ class LanguageBootomSheet extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Text('Arabic', style: Theme.of(context).textTheme.titleSmall)
+          Text(AppLocalizations.of(context)!.arabic,
+              style: Theme.of(context).textTheme.titleSmall)
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/home/settings/language_bottom_sheet.dart';
 import 'package:islami/home/settings/theme_bottom_sheet.dart';
 
@@ -15,7 +16,8 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Language', style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.language,
+              style: Theme.of(context).textTheme.titleMedium),
           SizedBox(
             height: 10,
           ),
@@ -31,7 +33,7 @@ class _SettingsTabState extends State<SettingsTab> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('English',
+                  Text(AppLocalizations.of(context)!.english,
                       style: Theme.of(context).textTheme.titleSmall),
                   Icon(Icons.arrow_drop_down)
                 ],
@@ -41,7 +43,8 @@ class _SettingsTabState extends State<SettingsTab> {
           SizedBox(
             height: 30,
           ),
-          Text('Theme', style: Theme.of(context).textTheme.titleMedium),
+          Text(AppLocalizations.of(context)!.theme,
+              style: Theme.of(context).textTheme.titleMedium),
           SizedBox(
             height: 10,
           ),
@@ -57,7 +60,8 @@ class _SettingsTabState extends State<SettingsTab> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Light', style: Theme.of(context).textTheme.titleSmall),
+                  Text(AppLocalizations.of(context)!.light,
+                      style: Theme.of(context).textTheme.titleSmall),
                   Icon(Icons.arrow_drop_down)
                 ],
               ),

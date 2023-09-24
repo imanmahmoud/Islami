@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBootomSheet extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class ThemeBootomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Light',
+              Text(AppLocalizations.of(context)!.light,
                   style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       color:
                           Theme.of(context).textSelectionTheme.selectionColor)),
@@ -25,7 +26,8 @@ class ThemeBootomSheet extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Text('Dark', style: Theme.of(context).textTheme.titleSmall)
+          Text(AppLocalizations.of(context)!.dark,
+              style: Theme.of(context).textTheme.titleSmall)
         ],
       ),
     );
