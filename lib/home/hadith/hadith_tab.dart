@@ -21,7 +21,7 @@ class _HadithTabState extends State<HadithTab> {
       children: [
         Expanded(flex: 1, child: Image.asset('assets/images/hadith_logo.png')),
         Divider(
-          color: Theme.of(context).primaryColor,
+          /*color: Theme.of(context).dividerColor,*/
           thickness: 3,
         ),
         Text(
@@ -29,7 +29,6 @@ class _HadithTabState extends State<HadithTab> {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
           thickness: 3,
         ),
         Expanded(
@@ -45,7 +44,6 @@ class _HadithTabState extends State<HadithTab> {
                           title: allHadith[index].title,
                           content: allHadith[index].content)),
                   separatorBuilder: (context, index) => Divider(
-                        color: Theme.of(context).primaryColor,
                         thickness: 1,
                         endIndent: 30,
                         indent: 30,

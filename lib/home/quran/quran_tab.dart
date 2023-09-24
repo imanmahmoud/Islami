@@ -125,7 +125,6 @@ class QuranTab extends StatelessWidget {
       children: [
         Expanded(flex: 1, child: Image.asset('assets/images/quran_logo.png')),
         Divider(
-          color: Theme.of(context).primaryColor,
           thickness: 3,
         ),
         Text(
@@ -133,7 +132,6 @@ class QuranTab extends StatelessWidget {
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
           thickness: 3,
         ),
         Expanded(
@@ -142,7 +140,6 @@ class QuranTab extends StatelessWidget {
               itemBuilder: (context, index) =>
                   SuraNameItem(name: suraNames[index], index: index),
               separatorBuilder: (context, index) => Divider(
-                    color: Theme.of(context).primaryColor,
                     thickness: 1,
                     endIndent: 30,
                     indent: 30,

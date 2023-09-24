@@ -31,7 +31,7 @@ class HadithDetailsScreen extends StatelessWidget {
                     child: Text(
                       args.content,
                       textDirection: TextDirection.rtl,
-                      style: Theme.of(context).textTheme.titleSmall,
+                      style: Theme.of(context).textTheme.bodySmall,
                       textAlign: TextAlign.center,
                     ),
                   )),
