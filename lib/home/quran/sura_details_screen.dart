@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/home/quran/sura_details_item.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const routeName = 'sura details';
@@ -14,6 +17,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     if (verses.isEmpty) {
       loadFile(args.index);
@@ -21,7 +25,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
     return Stack(children: [
       Image.asset(
-        'assets/images/main_background.png',
+        settingsProvider.getBackgroundDark(),
         fit: BoxFit.fill,
         width: double.infinity,
         height: double.infinity,
@@ -29,24 +33,24 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       Scaffold(
         appBar: AppBar(
             title: Text(
-          args.name,
-        )),
+              args.name,
+            )),
         body: verses.length == 0
             ? Center(
-                child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
-              ))
+            child: CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
+            ))
             : Card(
-                margin: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.05,
-                    vertical: MediaQuery.of(context).size.height * 0.06),
-                child: ListView.builder(
-                    itemBuilder: (context, index) {
-                      return SuraDetailsItem(
-                          content: verses[index], index: index);
-                    },
-                    itemCount: verses.length),
-              ),
+          margin: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.05,
+              vertical: MediaQuery.of(context).size.height * 0.06),
+          child: ListView.builder(
+              itemBuilder: (context, index) {
+                return SuraDetailsItem(
+                    content: verses[index], index: index);
+              },
+              itemCount: verses.length),
+        ),
       ),
     ]);
   }

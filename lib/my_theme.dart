@@ -8,6 +8,8 @@ class MyTheme {
   static Color whiteColor = Color(0xFFF8F8F8);
 
   static ThemeData lightTheme = ThemeData(
+      cardColor: whiteColor,
+      iconTheme: IconThemeData(color: primaryLight, size: 40),
       primaryColor: primaryLight,
       textSelectionTheme: TextSelectionThemeData(selectionColor: primaryLight),
       scaffoldBackgroundColor: Colors.transparent,
@@ -27,18 +29,21 @@ class MyTheme {
               color: blackColor, fontSize: 20, fontWeight: FontWeight.w400)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: blackColor,
+          unselectedItemColor: whiteColor,
           unselectedIconTheme: IconThemeData(
             size: 35,
           ),
           selectedIconTheme: IconThemeData(size: 35)),
       cardTheme: CardTheme(
-          color: whiteColor,
+          color: whiteColor.withOpacity(0.8),
           elevation: 3,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
       dividerColor: primaryLight,
       bottomSheetTheme: BottomSheetThemeData(backgroundColor: whiteColor));
   static ThemeData darkTheme = ThemeData(
+      cardColor: primaryDark,
+      iconTheme: IconThemeData(color: yellowColor, size: 40),
       primaryColor: primaryDark,
       textSelectionTheme: TextSelectionThemeData(selectionColor: yellowColor),
       scaffoldBackgroundColor: Colors.transparent,
@@ -58,12 +63,13 @@ class MyTheme {
               color: whiteColor, fontSize: 20, fontWeight: FontWeight.w400)),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: yellowColor,
+          unselectedItemColor: whiteColor,
           unselectedIconTheme: IconThemeData(
             size: 35,
           ),
           selectedIconTheme: IconThemeData(size: 35)),
       cardTheme: CardTheme(
-          color: primaryDark,
+          color: primaryDark.withOpacity(0.8),
           elevation: 3,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),

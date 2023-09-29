@@ -4,14 +4,18 @@ import 'package:islami/home/hadith/hadith_details_screen.dart';
 import 'package:islami/home/home_screen.dart';
 import 'package:islami/home/quran/sura_details_screen.dart';
 import 'package:islami/my_theme.dart';
+import 'package:islami/providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => SettingsProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
@@ -23,13 +27,10 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: settingsProvider.currentTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: [
-        Locale('en'),
-        Locale('ar'),
-      ],
-      locale: Locale('en'),
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(settingsProvider.currentLocale),
     );
   }
 }
