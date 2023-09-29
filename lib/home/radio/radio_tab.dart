@@ -20,9 +20,9 @@ class RadioTab extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset('assets/images/back_icon.png'),
-            Image.asset('assets/images/play_icon.png'),
-            Image.asset('assets/images/next_icon.png'),
+            Icon(Icons.skip_previous),
+            Icon(Icons.play_arrow),
+            Icon(Icons.skip_next),
           ],
         )
       ],

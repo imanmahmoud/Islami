@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/hadith/hadith.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/settings_provider.dart';
 
 class HadithDetailsScreen extends StatelessWidget {
   static const routeName = 'Hadith details';
@@ -7,10 +10,11 @@ class HadithDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments as Hadith;
+    var settingsProvider = Provider.of<SettingsProvider>(context);
 
     return Stack(children: [
       Image.asset(
-        'assets/images/main_background.png',
+        settingsProvider.getBackgroundDark(),
         fit: BoxFit.fill,
         width: double.infinity,
         height: double.infinity,
